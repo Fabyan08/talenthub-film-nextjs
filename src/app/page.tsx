@@ -121,6 +121,9 @@ const Home: React.FC = () => {
 
   return (
     <main>
+      {selectedMovieId && (
+        <MovieModal movieId={selectedMovieId} onClose={handleCloseModal} />
+      )}
       <header className="bg-main2 bg-cover bg-center w-full h-fit pb-10 md:h-screen relative">
         <div className="flex w-full justify-center">
           <nav className="fixed z-20 md:hidden bottom-4 px-10 justify-between text-3xl text-white  flex items-center bg-slate-800/40 backdrop-blur-md h-20 rounded-full w-[90%] border-2 border-white">
@@ -280,12 +283,6 @@ const Home: React.FC = () => {
 
         <div className="wrapper mt-10">
           <div className="mt-10">
-            {selectedMovieId && (
-              <MovieModal
-                movieId={selectedMovieId}
-                onClose={handleCloseModal}
-              />
-            )}
             <ul className="grid grid-cols-2 md:grid-cols-5 gap-3 md:px-10">
               {movie.results &&
                 movie.results.length > 0 &&
