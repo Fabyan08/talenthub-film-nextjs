@@ -121,11 +121,11 @@ const Home: React.FC = () => {
 
   return (
     <>
-      {selectedMovieId && (
-        <MovieModal movieId={selectedMovieId} onClose={handleCloseModal} />
-      )}
       <main>
         <header className="bg-main2 bg-cover bg-center w-full h-fit pb-10 md:h-screen relative">
+          {selectedMovieId && (
+            <MovieModal movieId={selectedMovieId} onClose={handleCloseModal} />
+          )}
           <div className="flex w-full justify-center">
             <nav className="fixed z-20 md:hidden bottom-4 px-10 justify-between text-3xl text-white  flex items-center bg-slate-800/40 backdrop-blur-md h-20 rounded-full w-[90%] border-2 border-white">
               <FaHome className="hover:text-primary duration-150 " />

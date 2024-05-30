@@ -31,20 +31,38 @@ const MovieModal = ({ movieId, onClose }: MovieModalProps) => {
   }, [movieId]);
 
   return (
-    <div className="fixed px-4 inset-0 bg-black/20 backdrop-blur-sm overflow-y-auto flex items-center justify-center z-40 w-full h-screen">
-      <div className="bg-white text-slate-950 rounded-lg p-8 max-w-md w-full">
+    // <div className="fixed px-4 inset-0 bg-black/20 backdrop-blur-sm overflow-y-auto flex items-center justify-center z-40 w-full h-screen">
+    //   <div className="bg-white text-slate-950 rounded-lg p-8 max-w-md w-full">
+    //     {movieDetail && (
+    //       <>
+    //         <div className="flex justify-between items-center mb-4">
+    //           <h2 className="text-xl font-bold">{movieDetail.title}</h2>
+    //           <button
+    //             className="text-gray-500 hover:text-gray-700"
+    //             onClick={onClose}
+    //           >
+    //             X
+    //           </button>
+    //         </div>
+    //         <p>{movieDetail.overview}</p>
+    //       </>
+    //     )}
+    //   </div>
+    // </div>
+    <div className="modal shadoow-md ">
+      <div className="modal-content">
         {movieDetail && (
           <>
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold">{movieDetail.title}</h2>
-              <button
-                className="text-gray-500 hover:text-gray-700"
-                onClick={onClose}
-              >
+            <div className="modal-header">
+              <h2>{movieDetail.title}</h2>
+              <button className="close-btn" onClick={onClose}>
                 X
               </button>
             </div>
-            <p>{movieDetail.overview}</p>
+            <div className="modal-body">
+              <p>{movieDetail.overview}</p>
+              {/* You can add more movie details here */}
+            </div>
           </>
         )}
       </div>
