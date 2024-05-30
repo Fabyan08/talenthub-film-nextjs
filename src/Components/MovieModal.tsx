@@ -31,7 +31,7 @@ const MovieModal = ({ movieId, onClose }: MovieModalProps) => {
   }, [movieId]);
 
   return (
-    <div className="fixed px-4 inset-0 bg-black/20 backdrop-blur-sm overflow-y-auto flex items-center justify-center z-50">
+    <div className="fixed px-4 inset-0 bg-black/20 backdrop-blur-sm overflow-y-auto flex items-center justify-center z-40 w-full h-screen">
       <div className="bg-white text-slate-950 rounded-lg p-8 max-w-md w-full">
         {movieDetail && (
           <>
